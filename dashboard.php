@@ -1,7 +1,10 @@
 <?php
 session_start();
-// session_destroy();
 include 'includes/header.php';
+
+if (!$_SESSION['login']) {
+    header('location:index.php');
+}
 
 ?>
 

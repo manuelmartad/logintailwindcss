@@ -12,22 +12,20 @@ if (file_exists($file)) {
 ?>
 
 <div class="md:w-1/3 mx-auto">
-    <?php foreach ($errors as $error) : ?>
-        <div class="shadow-lg transition hover:bg-red-600 bg-red-500 p-2 my-2 text-center text-white rounded ml-2 w-full" role="alert">
-            <p class=""><?php echo $error ?></p>
-        </div>
-    <?php endforeach ?>
+    <?php foreach ($errors as $error) :
+        alertMessage($error);
+    endforeach ?>
     <div class="shadow-lg w-full mx-2 mt-3 rounded bg-gray-100">
         <div class="p-5">
-            <form method="POST">
+            <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
                 <div class="mb-3">
                     <p class="font-semibold mb-2 capitalize text-gray-600">correo</p>
-                    <input class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-indigo-200 focus:shadow-outline" id="email" name="email" type="email" value="<?php echo $email ?>" placeholder="johndoe@gmail.com" />
+                    <input required class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-indigo-200 focus:shadow-outline" id="email" name="email" type="email" value="<?php echo $email ?>" placeholder="johndoe@gmail.com" />
                 </div>
 
                 <div class="mb-3">
                     <p class="font-semibold mb-2 capitalize text-gray-600">contraseña</p>
-                    <input class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-indigo-200 focus:shadow-outline" id="password" name="password" type="password" placeholder="*******" />
+                    <input required class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-indigo-200 focus:shadow-outline" id="password" name="password" type="password" placeholder="*******" />
                 </div>
 
                 <input type="submit" value="iniciar sesión" class="px-4 mt-3 py-3 w-full font-semibold text-sm bg-violet-500 text-white rounded-md shadow-sm hover:bg-violet-600 cursor-pointer outline-none hover:outline-violet-600 uppercase transition ease-in-out duration-500" />

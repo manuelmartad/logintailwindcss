@@ -1,5 +1,6 @@
 <?php
 require_once 'config/db.php';
+require_once 'config/functions.php';
 
 $errors = [];
 $ptnEmail = "/^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/";
@@ -9,10 +10,10 @@ $email = "";
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-    $username = $_POST['username'];
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-    $password_confirmation = $_POST['password_confirmation'];
+    $username = sanitize($_POST['username']);
+    $email = sanitize($_POST['email']);
+    $password = sanitize($_POST['password']);
+    $password_confirmation = sanitize($_POST['password_confirmation']);
 
     if (!$username || !$email || !$password || !$password_confirmation) {
         $errors[] = "Todos los campos son obligatorios";
