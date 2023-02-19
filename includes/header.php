@@ -18,6 +18,7 @@
       background-size: cover;
       background-repeat: none;
       height: 100vh;
+      width: 100%;
     }
   </style>
 </head>

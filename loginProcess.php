@@ -15,7 +15,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (!$email || !$password) {
         $errors[] = "Todos los campos son obligatorios";
     } else {
-
         if (!preg_match($ptnEmail, $email)) {
             $errors[] = "El formato del correo es incorrecto";
         }
@@ -23,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if (empty($errors)) {
 
-        $q = $conn->prepare("SELECT id, username, email, password FROM users WHERE email = ?");
+        $q = $conn->prepare("SELECT id, is_admin, username, email, password FROM users WHERE email = ?");
         $q->bind_param('s', $email);
         $q->execute();
         $r = $q->get_result();
@@ -44,6 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION['id'] = $f['id'];
             $_SESSION['username'] = $f['username'];
             $_SESSION['email'] = $f['email'];
+            $_SESSION['is_admin'] = $f['is_admin'];
             $_SESSION['login'] = true;
 
             header('location:dashboard.php');
