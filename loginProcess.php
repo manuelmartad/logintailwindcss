@@ -34,21 +34,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             $checkPass = password_verify($password, $f['password']);
 
-            if (!$checkPass) {
-                $errors[] = "La contraseña es incorrecta";
+            if ($checkPass) {
+                session_start();
+
+                $_SESSION['id'] = $f['id'];
+                $_SESSION['username'] = $f['username'];
+                $_SESSION['email'] = $f['email'];
+                $_SESSION['is_admin'] = $f['is_admin'];
+                $_SESSION['login'] = true;
+
+                header('location:dashboard.php');
+            } else {
+                $errors[] = "Error de autenticación";
             }
-
-            session_start();
-
-            $_SESSION['id'] = $f['id'];
-            $_SESSION['username'] = $f['username'];
-            $_SESSION['email'] = $f['email'];
-            $_SESSION['is_admin'] = $f['is_admin'];
-            $_SESSION['login'] = true;
-
-            header('location:dashboard.php');
         } else {
-            $errors[] = "El usuario no existe";
+            $errors[] = "Error de autenticación";
         }
     }
 }
