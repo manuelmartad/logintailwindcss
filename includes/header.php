@@ -23,3 +23,4 @@
 </head>
 
 <body class="bg-gray-100">
+  <div class="container">

@@ -14,14 +14,14 @@ if (file_exists($file)) {
 }
 
 ?>
-<div class="md:flex justify-center items-center gap-10 md:mt-20 px-20">
+<div class="md:flex justify-center items-center gap-10 md:mt-20 md:px-20">
     <div class="p-10">
         <img src="assets/img/bg.svg" alt="" style="min-width:300px; max-width:500px;">
         </p>
     </div>
 
 
-    <div class="shadow-xl mx-2 mt-3 rounded-xl bg-white" style="min-width: 360px;">
+    <div class="shadow-xl md:mx-2 mt-3 rounded-xl bg-white" style="min-width: 360px;">
 
         <div class="p-5">
             <?php foreach ($errors as $error) :

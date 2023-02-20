@@ -19,8 +19,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $errors[] = "Todos los campos son obligatorios";
     } else {
 
-        if (strlen($username) > 20) {
-            $errors[] = "El usuario no debe tener mas de 20 caracteres";
+        if (strlen($username) > 100 || strlen($username) < 5) {
+            $errors[] = "El usuario debe tener al menos 5 caracteres";
         }
         if (!preg_match($ptnEmail, $email)) {
             $errors[] = "El formato del correo es incorrecto";

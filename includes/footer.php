@@ -1,3 +1,4 @@
+</div>
 <script>
     const username = document.querySelector("#username");
     const email = document.querySelector("#email");
