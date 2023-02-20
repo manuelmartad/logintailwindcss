@@ -2,7 +2,7 @@
     <div class="not-prose relative bg-slate-50 rounded overflow-hidden dark:bg-slate-800/25">
         <div style="background-position:10px 10px" class="absolute inset-0 bg-grid-slate-100 [mask-image:linear-gradient(0deg,#fff,rgba(255,255,255,0.6))] dark:bg-grid-slate-700/25 dark:[mask-image:linear-gradient(0deg,rgba(255,255,255,0.1),rgba(255,255,255,0.5))]"></div>
         <div class="relative rounded overflow-auto">
-            <div class="shadow-sm overflow-hidden my-8">
+            <div class="shadow-sm overflow-auto my-8">
                 <table class="border-collapse table-auto w-full text-sm text-center">
                     <thead>
                         <tr>
@@ -10,6 +10,7 @@
                             <th class="border-b dark:border-slate-600 font-medium p-4 pt-0 pb-3 text-slate-400 dark:text-slate-200">Correo</th>
                             <th class="border-b dark:border-slate-600 font-medium p-4 pr-8 pt-0 pb-3 text-slate-400 dark:text-slate-200">Eliminado</th>
                             <th class="border-b dark:border-slate-600 font-medium p-4 pr-8 pt-0 pb-3 text-slate-400 dark:text-slate-200">Rol</th>
+                            <!-- <th class="border-b dark:border-slate-600 font-medium p-4 pr-8 pt-0 pb-3 text-slate-400 dark:text-slate-200">Password</th> -->
                             <th class="border-b dark:border-slate-600 font-medium p-4 pr-8 pt-0 pb-3 text-slate-400 dark:text-slate-200">Creado</th>
                         </tr>
                     </thead>

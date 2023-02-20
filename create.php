@@ -2,6 +2,10 @@
 session_start();
 include 'includes/header.php';
 
+if (isset($_SESSION['login'])) {
+  header('location:dashboard.php');
+}
+
 $file = 'register.php';
 if (file_exists($file)) {
   include $file;

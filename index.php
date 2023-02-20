@@ -2,6 +2,10 @@
 session_start();
 include 'includes/header.php';
 
+if (isset($_SESSION['login'])) {
+    header('location:dashboard.php');
+}
+
 $file = 'loginProcess.php';
 if (file_exists($file)) {
     include $file;
@@ -13,7 +17,7 @@ if (file_exists($file)) {
 <div class="md:flex justify-center items-center gap-10 md:mt-20 px-20">
     <div class="p-10">
         <img src="assets/img/bg.svg" alt="" style="min-width:300px; max-width:500px;">
-       </p>
+        </p>
     </div>
 
 
