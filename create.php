@@ -27,23 +27,23 @@ if (file_exists($file)) {
       endforeach ?>
       <form method="POST" novalidate action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
         <div class="mb-4">
-          <input required class="shadow appearance-none border rounded w-full py-4 px-3 text-gray-700 leading-tight focus:outline-indigo-200 focus:shadow-outline" id="username" name="username" type="text" value="<?php echo $username ?>" placeholder="Nombre de usuario" />
+          <?php inputComponent('username', 'username', 'text', $username, 'Nombre de usuario') ?>
         </div>
 
         <div class="mb-4">
-          <input required class="shadow appearance-none border rounded w-full py-4 px-3 text-gray-700 leading-tight focus:outline-indigo-200 focus:shadow-outline" id="email" name="email" type="email" value="<?php echo $email ?>" placeholder="Correo electrónico" />
+          <?php inputComponent('email', 'email', 'email', $email, 'Correo electrónico') ?>
         </div>
 
         <div class="mb-4">
-          <input required class="shadow appearance-none border rounded w-full py-4 px-3 text-gray-700 leading-tight focus:outline-indigo-200 focus:shadow-outline" id="password" name="password" type="password" placeholder="Contraseña" />
+          <?php inputComponent('password', 'password', 'password', null, 'Contraseña') ?>
         </div>
 
         <div class="mb-4">
-          <input required class="shadow appearance-none border rounded w-full py-4 px-3 text-gray-700 leading-tight focus:outline-indigo-200 focus:shadow-outline" id="password_confirmation" name="password_confirmation" type="password" placeholder="Confirmar contraseña" />
+          <?php inputComponent('password_confirmation', 'password_confirmation', 'password', null, 'Confirmar contraseña') ?>
         </div>
 
         <div class="flex flex-col justify-center items-center gap-5">
-          <input type="submit" value="Registrate" class="px-4 mt-3 py-4 w-full font-semibold text-sm bg-violet-500 text-white rounded-md shadow-sm hover:bg-violet-600 cursor-pointer outline-none transition ease-in-out duration-500" style="font-size: 20px;" />
+          <?php buttonSubmitComponent('Registrate') ?>
           <a href="index.php" class="text-blue-600 hover:underline">¿Ya tienes una cuenta?</a>
         </div>
       </form>

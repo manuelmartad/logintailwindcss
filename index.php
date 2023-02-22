@@ -1,6 +1,7 @@
 <?php
 session_start();
 include 'includes/header.php';
+require 'config/functions.php';
 
 if (isset($_SESSION['login'])) {
     header('location:dashboard.php');
@@ -29,15 +30,16 @@ if (file_exists($file)) {
             endforeach ?>
             <form method="POST" novalidate action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
                 <div class="mb-5">
-                    <input required class="shadow appearance-none border rounded w-full py-4 px-3 text-gray-700 leading-tight focus:outline-indigo-200 focus:shadow-outline" id="email" name="email" type="email" value="<?php echo $email ?>" placeholder="Correo electrónico" />
+                    <?php inputComponent('email', 'email', 'text', $email, 'Correo electrónico') ?>
                 </div>
 
                 <div class="mb-5">
-                    <input required class="shadow appearance-none border rounded w-full py-4 px-3 text-gray-700 leading-tight focus:outline-indigo-200 focus:shadow-outline" id="password" name="password" type="password" placeholder="Contraseña" />
+                    <?php inputComponent('password', 'password', 'password', null, 'Contraseña') ?>
                 </div>
 
                 <div class="flex flex-col items-center gap-5">
-                    <input type="submit" value="Iniciar sesión" class="px-4 mt-3 py-4 w-full font-semibold text-sm bg-violet-500 text-white rounded-md shadow-sm hover:bg-violet-600 cursor-pointer outline-none transition ease-in-out duration-500" style="font-size: 20px;" />
+                    <?php buttonSubmitComponent('Iniciar sesión') ?>
+
                     <a href="forgot.html" class="text-blue-600 hover:underline">¿Olvidaste tu contraseña?</a>
                     <hr class="border border-1 border-gray-200 w-full">
                     <a href="create.php" class="px-4 mt-3 py-4 font-semibold text-sm bg-green-500 text-white rounded-md shadow-sm hover:bg-green-600 cursor-pointer outline-none transition ease-in-out duration-500" style="font-size: 20px;">Crear cuenta nueva</a>

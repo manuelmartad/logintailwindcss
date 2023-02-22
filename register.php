@@ -53,7 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             if ($q->execute()) {
                 echo '<div class="shadow-lg transition hover:bg-emerald-600 bg-emerald-500 p-2 text-center text-white rounded md:w-1/3" style="margin:10px auto!important;" role="alert">
                 <p class="">¡Tu cuenta ha sido creada con éxito! 
-                <a href="login.php" class="font-semibold hover:underline">inicia sesión</a></p>
+                <a href="index.php" class="font-semibold hover:underline">inicia sesión</a></p>
               </div>';
             }
         }
